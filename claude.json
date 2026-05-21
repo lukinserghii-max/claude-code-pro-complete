@@ -1,0 +1,85 @@
+{
+  "mcpServers": {
+
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/user/projects",
+        "/home/user/Downloads"
+      ],
+      "comment": "⬆ замени /home/user на свой реальный путь"
+    },
+
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "comment": "браузерная автоматизация и тестирование ботов"
+    },
+
+    "brave-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "ВСТАВЬ_КЛЮЧ_СЮДА"
+      },
+      "comment": "ключ: https://api.search.brave.com — Free 2000 req/mo"
+    },
+
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "comment": "управление репозиториями, PR, issues"
+    },
+
+    "supabase": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase@latest"],
+      "env": {
+        "SUPABASE_URL": "https://ТВОЙ_ПРОЕКТ.supabase.co",
+        "SUPABASE_SERVICE_ROLE_KEY": "ВСТАВЬ_SERVICE_ROLE_KEY"
+      },
+      "comment": "БД для ботов и RAG — https://supabase.com"
+    },
+
+    "sequentialthinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "comment": "глубокое многошаговое мышление для сложных задач"
+    },
+
+    "fetch": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "comment": "HTTP запросы к любым API и вебхукам"
+    },
+
+    "puppeteer": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "comment": "скрейпинг сайтов, скриншоты, PDF"
+    },
+
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "comment": "долгосрочная память для AI консультантов"
+    },
+
+    "elevenlabs": {
+      "type": "http",
+      "url": "https://mcp.elevenlabs.io/mcp",
+      "comment": "TTS озвучка для видео — https://elevenlabs.io"
+    }
+
+  }
+}
